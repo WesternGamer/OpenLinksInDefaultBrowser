@@ -14,7 +14,7 @@ namespace ClientPlugin
     // ReSharper disable once UnusedType.Global
     public class Plugin : IPlugin, IDisposable
     {
-        public const string Name = "PluginTemplate";
+        public const string Name = "OpenLinksInDefaultBrowser";
         public static Plugin Instance { get; private set; }
 
         public long Tick { get; private set; }
@@ -22,9 +22,9 @@ namespace ClientPlugin
         public IPluginLogger Log => Logger;
         private static readonly IPluginLogger Logger = new PluginLogger(Name);
 
-        public IPluginConfig Config => config?.Data;
-        private PersistentConfig<PluginConfig> config;
-        private static readonly string ConfigFileName = $"{Name}.cfg";
+        //public IPluginConfig Config => config?.Data;
+        //private PersistentConfig<PluginConfig> config;
+        //private static readonly string ConfigFileName = $"{Name}.cfg";
 
         private static bool initialized;
         private static bool failed;
@@ -36,8 +36,8 @@ namespace ClientPlugin
 
             Log.Info("Loading");
 
-            var configPath = Path.Combine(MyFileSystem.UserDataPath, ConfigFileName);
-            config = PersistentConfig<PluginConfig>.Load(Log, configPath);
+            //var configPath = Path.Combine(MyFileSystem.UserDataPath, ConfigFileName);
+            //config = PersistentConfig<PluginConfig>.Load(Log, configPath);
 
             if (!PatchHelpers.HarmonyPatchAll(Log, new Harmony(Name)))
             {
@@ -114,9 +114,9 @@ namespace ClientPlugin
 
 
         // ReSharper disable once UnusedMember.Global
-        public void OpenConfigDialog()
-        {
-            MyGuiSandbox.AddScreen(new MyPluginConfigDialog());
-        }
+        //public void OpenConfigDialog()
+        //{
+        //    MyGuiSandbox.AddScreen(new MyPluginConfigDialog());
+        //}
     }
 }
