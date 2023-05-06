@@ -527,6 +527,8 @@
     <Compile Include="Logging\IPluginLogger.cs" />
     <Compile Include="Logging\LogFormatter.cs" />
     <Compile Include="Logging\PluginLogger.cs" />
+    <Compile Include="Patches\OpenOverlayUrl_Patch.cs" />
+    <Compile Include="Patches\OpenOverlayUser_Patch.cs" />
     <Compile Include="Patches\PatchHelpers.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -540,7 +542,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Lib.Harmony" Version="2.2.2" />
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.2.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

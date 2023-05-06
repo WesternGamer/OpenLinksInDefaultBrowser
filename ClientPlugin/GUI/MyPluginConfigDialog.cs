@@ -52,8 +52,8 @@ namespace ClientPlugin.GUI
         {
             AddCaption(Caption);
 
-            var config = Plugin.Instance.Config;
-            CreateCheckbox(out enabledLabel, out enabledCheckbox, config.Enabled, value => config.Enabled = value, "Enabled", "Enables the plugin");
+            //var config = Plugin.Instance.Config;
+            //CreateCheckbox(out enabledLabel, out enabledCheckbox, config.Enabled, value => config.Enabled = value, "Enabled", "Enables the plugin");
             // TODO: Create your UI controls here
 
             infoText = new MyGuiControlMultilineText
